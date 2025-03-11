@@ -1,0 +1,133 @@
+
+:root {
+    --primary-color: #4c94ff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --card-hover-transform: translateY(-5px);
+    --transition-time: 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.header h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+.mistake-card {
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform var(--transition-time), box-shadow var(--transition-time);
+    margin-bottom: 30px;
+    position: relative;
+    color: white;
+    cursor: pointer;
+}
+
+.mistake-card:hover {
+    transform: var(--card-hover-transform);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.mistake-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: rgba(0,0,0,0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mistake-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.mistake-content {
+    padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    height: 70%;
+    transition: bottom var(--transition-time);
+    color: #333;
+    overflow-y: auto;
+}
+
+.mistake-card:hover .mistake-content {
+    bottom: 0;
+}
+
+.color-1 { background-color: #FF9642; }
+.color-2 { background-color: #8BC34A; }
+.color-3 { background-color: #FF5733; }
+.color-4 { background-color: #5D5FEF; }
+.color-5 { background-color: #FF4C79; }
+.color-6 { background-color: #00BCD4; }
+.color-7 { background-color: #8BC34A; }
+.color-8 { background-color: #3F51B5; }
+.color-9 { background-color: #FFC107; }
+.color-10 { background-color: #00BCD4; }
+.color-11 { background-color: #4CD6B1; }
+.color-12 { background-color: #9C27B0; }
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    .mistake-card {
+        height: 150px;
+    }
+}
+
+/* Animation for cards */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-card {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
